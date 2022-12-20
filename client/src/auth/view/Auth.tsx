@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Button, Form, Input, Space} from "antd";
 import styles from './Auth.module.css'
 import {authActions, authAtoms} from "../viewModel/auth";
@@ -7,15 +7,15 @@ import {CHAT_ROUTE} from "../../utils/consts";
 import {Redirect} from "react-router-dom";
 
 const Auth = () => {
-    const [fieldUserName, setFieldUserName] = useState("")
-
     const isUserAuth = useAtom(authAtoms.isAuthUserAtom)
+    const userName = useAtom(authAtoms.userNameAtom)
+
     const handleLogin = useAction(authActions.login)
+    const handleSetUserName = useAction(authActions.setUserName)
 
     const onLogIn = () => {
-        if (fieldUserName) {
-            handleLogin(fieldUserName)
-        }
+        if (userName)
+            handleLogin()
     };
 
 
@@ -32,7 +32,7 @@ const Auth = () => {
                 <Form.Item
                     name="userName"
                 >
-                    <Input value={fieldUserName} placeholder="type your username" onChange={e => setFieldUserName(e.target.value.trim())}/>
+                    <Input value={userName} placeholder="type your username" onChange={e => handleSetUserName(e.target.value.trim())}/>
                 </Form.Item>
 
                 <Space direction="vertical" style={{ width: '100%' }}>

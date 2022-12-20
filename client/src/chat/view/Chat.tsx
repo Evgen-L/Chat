@@ -6,7 +6,6 @@ import {useAction, useAtom} from "@reatom/react";
 import {authAtoms} from "../../auth/viewModel/auth";
 import {chatActions, chatAtoms} from "../viewModel/chat";
 import MessageCompanionItem from "../../components/Messages/MessageCompanionItem/MessageCompanionItem";
-import {Redirect} from "react-router-dom";
 import {AUTH_ROUTE} from "../../utils/consts";
 import TextArea from "antd/es/input/TextArea";
 import MyMessageItem from "../../components/Messages/MyMessageItem/MyMessageItem";
@@ -16,6 +15,7 @@ import {messagesActions, messagesAtom} from "../message/viewModel/message";
 import {MessageData} from "../../types/messageData";
 import {HttpTransportType, HubConnectionBuilder} from "@microsoft/signalr";
 import {urls} from "../../api/urls";
+import {Redirect} from "react-router-dom";
 
 const Chat = () => {
     const isUserAuth = useAtom(authAtoms.isAuthUserAtom)
@@ -48,7 +48,7 @@ const Chat = () => {
     const messagesList: MessageData[] = useMemo(() => Object.values(messages).reverse(), [messages]);
 
     const onButtonSendClicked = () => {
-        console.log("test front-tests 4")
+        console.log("test front-tests 2")
         if (textMessage) {
             const currTime = new Date()
             handleSendMessage({text: textMessage, userName: userName, time: currTime})

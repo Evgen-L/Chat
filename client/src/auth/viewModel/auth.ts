@@ -2,7 +2,7 @@ import {declareAction} from "@reatom/core"
 import { declareAtomWithSetter } from "../../core/reatom/declareAtomWithSetter"
 
 const logout = declareAction('logout')
-const login = declareAction<string>('login')
+const login = declareAction('login')
 
 const [isAuthUserAtom] = declareAtomWithSetter<boolean>('isAuthUser', false, on => [
     on(logout, () => false),
@@ -11,8 +11,7 @@ const [isAuthUserAtom] = declareAtomWithSetter<boolean>('isAuthUser', false, on 
 
 
  const [userNameAtom, setUserName] = declareAtomWithSetter('userName', '',on => [
-    on(logout, () => ''),
-     on(login, (state: string, name: string) => name)
+    on(logout, () => '')
      ]
  );
 
