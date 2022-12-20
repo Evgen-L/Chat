@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 jobs:
 
-  Frontend-Actions:
+  Front-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,21 +22,21 @@ jobs:
       - name: Test
         run: npm run test --prefix ./client
 
-    Backend-Actions:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          dotnet-version: [ '6.X' ]
-      steps:
-        - uses: actions/checkout@v3
-        - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
-          uses: actions/setup-dotnet@v3
-          with:
-            dotnet-version: ${{ matrix.dotnet-version }}
-        - name: Install dependencies backend
-          run: dotnet restore ./backend
-        - name: Build
-          run: dotnet build ./backend --configuration Release --no-restore
+  Back-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '6.X' ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Install dependencies backend
+        run: dotnet restore ./backend
+      - name: Build
+        run: dotnet build ./backend --configuration Release --no-restore
 
   build_and_pub:
     needs: [Backend-Actions, Frontend-Actions]

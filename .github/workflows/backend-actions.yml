@@ -1,9 +1,9 @@
-name: backend-actions
+name: back-actions
 on:
   push:
     branches: [ backend ]
 jobs:
-  Backend-Actions:
+  Back-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:

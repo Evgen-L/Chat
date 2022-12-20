@@ -3,7 +3,7 @@ on:
   push:
     branches: [ front ]
 jobs:
-  Frontend-Actions:
+  Front-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
