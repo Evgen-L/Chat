@@ -11,6 +11,7 @@ builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader())
+
 );
 
 var app = builder.Build();
@@ -21,7 +22,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseDefaultFiles();
 
