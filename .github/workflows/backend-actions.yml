@@ -1,4 +1,4 @@
-name: backend actions
+name: backend-actions
 on:
   push:
     branches: [ backend ]
