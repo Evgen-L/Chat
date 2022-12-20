@@ -22,12 +22,6 @@ jobs:
       - name: Test
         run: npm run test --prefix ./client
 
-
-  name: backend actions
-  on:
-    push:
-      branches: [ backend ]
-  jobs:
     Backend-Actions:
       runs-on: ubuntu-latest
       strategy:
