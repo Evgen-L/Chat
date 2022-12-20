@@ -12,5 +12,6 @@ public class Tests
         string actual = "Host=localhost;Username=postgres;Password=admin;Database=chat_db";
 
         Assert.Equal(expected, actual);
+        
     }
 }

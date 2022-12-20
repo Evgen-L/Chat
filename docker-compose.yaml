@@ -14,7 +14,8 @@ services:
 
 
   backend:
-    container_name: asp_backend
+    container_name: chat-backend
+    image: saxez/chat-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
