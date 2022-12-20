@@ -23,7 +23,7 @@ jobs:
         run: npm run test --prefix ./client
 
 
-  name: GitHub Backend Actions
+  name: backend actions
   on:
     push:
       branches: [ backend ]
@@ -45,11 +45,11 @@ jobs:
           run: dotnet build ./backend --configuration Release --no-restore
 
   build_and_pub:
-    needs: [GitHub Backend Actions, Frontend-Actions]
+    needs: [backend actions, Frontend-Actions]
     runs-on: [ubuntu-latest]
     steps:
       - name: Login to docker.io
-        run:  echo ${{ secrets.DOCKER_PWD }} | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
+        run:  echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_LOG }} --password-stdin
       - uses: actions/checkout@master
       - name: Build image
         run: docker-compose build
