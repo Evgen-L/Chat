@@ -14,6 +14,7 @@ const Auth = () => {
     const handleSetUserName = useAction(authActions.setUserName)
 
     const onLogIn = () => {
+        let temp
         if (userName)
             handleLogin()
     };
