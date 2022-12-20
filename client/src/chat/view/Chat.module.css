@@ -1,0 +1,36 @@
+.content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list
+{
+    overflow-y: auto;
+    width: 50vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.messageEnterBlock
+{
+    display: flex;
+    flex-direction: row;
+    width: 51vw;
+}
+
+.btnEnterBlock
+{
+    margin-left: 12px;
+    margin-top: 5px;
+}

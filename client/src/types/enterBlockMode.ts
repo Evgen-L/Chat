@@ -1,0 +1,1 @@
+export const EnterBlockMode = { WRITE: 'write', EDIT: 'edit' };
