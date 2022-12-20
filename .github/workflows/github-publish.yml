@@ -39,7 +39,7 @@ jobs:
           run: dotnet build ./backend --configuration Release --no-restore
 
   build_and_pub:
-    needs: [backend actions, Frontend-Actions]
+    needs: [Backend-Actions, Frontend-Actions]
     runs-on: [ubuntu-latest]
     steps:
       - name: Login to docker.io
