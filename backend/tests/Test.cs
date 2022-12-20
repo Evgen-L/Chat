@@ -1,4 +1,5 @@
 using Xunit;
+using backend.DbTools;
 
 namespace Tests;
 
