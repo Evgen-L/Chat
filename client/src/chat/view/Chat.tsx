@@ -48,7 +48,7 @@ const Chat = () => {
     const messagesList: MessageData[] = useMemo(() => Object.values(messages).reverse(), [messages]);
 
     const onButtonSendClicked = () => {
-        console.log("test front-tests 4")
+        console.log("test front-tests 1")
         if (textMessage) {
             const currTime = new Date()
             handleSendMessage({text: textMessage, userName: userName, time: currTime})
