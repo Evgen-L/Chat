@@ -1,4 +1,4 @@
-using XUnit
+using XUnit;
 
 namespace Tests;
 
