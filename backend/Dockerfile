@@ -17,6 +17,8 @@ FROM ubuntu/dotnet-aspnet
 WORKDIR /app
 COPY --from=builder /app ./
 
+RUN dotnet add package xUnit
+
 ENV PORT 8080
 EXPOSE 8080
 

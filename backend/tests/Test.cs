@@ -8,7 +8,7 @@ public class Tests
     public void CheckGetConnString()
     {
         string expected = GetConnectionString();
-        string actual = "Host={localhost};Username={postgres};Password={admin};Database={chat_db}";
+        string actual = "Host=localhost;Username=postgres;Password=admin;Database=chat_db";
 
         Assert.Equal(expected, actual);
     }
