@@ -45,6 +45,10 @@ jobs:
       - name: Login to docker.io
         run:  echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_LOG }} --password-stdin
       - uses: actions/checkout@master
+      - name: Logout from docker.io
+        run: echo docker logout
+      - name: Login to docker.io
+        run: echo ${{ secrets.DOCKER_PASS_BACK }} | docker login -u ${{ secrets.DOCKER_LOG_BACK }} --password-stdin
       - name: Build image
         run: docker-compose build
       - name: Push image to docker.io
