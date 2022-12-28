@@ -18,6 +18,7 @@ const Auth = () => {
             handleLogin()
     };
 
+
     if (isUserAuth) {
         return <Redirect to={CHAT_ROUTE} />
     }
